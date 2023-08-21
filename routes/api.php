@@ -18,4 +18,4 @@ Route::get('category',[\App\Http\Controllers\API\CategoryController::class,'inde
 Route::get('category_id={id}',[\App\Http\Controllers\API\CategoryController::class,'show']);
 //Posts
 Route::get('posts',[\App\Http\Controllers\API\PostsController::class,'index']);
-Route::get('posts={slug}',[\App\Http\Controllers\API\PostsController::class,'show']);
+Route::get('posts_slug={slug}',[\App\Http\Controllers\API\PostsController::class,'show']);
