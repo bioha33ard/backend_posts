@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryResource;
+use App\Http\Resources\PostsResource;
 use App\Models\Category;
+use App\Models\Posts;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -33,12 +35,12 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int $id
+     * @return CategoryResource|\Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        return new CategoryResource(Category::findOrFail($id));
     }
 
     /**
