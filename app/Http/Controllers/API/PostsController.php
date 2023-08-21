@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return PostsResource::collection(Posts::all());
+        return PostsResource::collection(Posts::paginate(10));
     }
 
     /**
@@ -33,12 +33,12 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param string $slug
+     * @return PostsResource
      */
-    public function show($id)
+    public function show(string $slug): PostsResource
     {
-        //
+        return new PostsResource(Posts::where('slug', '=' ,$slug)->first());
     }
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static findOrFail(int $id)
+ * @method static find(mixed $id)
  */
 class Category extends Model
 {
